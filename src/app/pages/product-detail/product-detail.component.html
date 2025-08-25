@@ -1,0 +1,13 @@
+<section>
+  @if (product()) {
+  <img [src]="product().image" alt="{{ product().title }}" />
+  <div>
+    <h3>{{ product().title }}</h3>
+    <p>{{ product().price }}</p>
+    <p>{{ product().description }}</p>
+  </div>
+  <button type="button" (click)="onAddToCart()">Adicionar ao carrinho</button>
+  } @else {
+  <p>Carregando detalhes do produto...</p>
+  }
+</section>

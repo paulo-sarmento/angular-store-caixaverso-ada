@@ -1,0 +1,11 @@
+<app-product-category (selectedCategory)="onSelectedCategory($event)"></app-product-category>
+
+<section>
+  <ul>
+    @if (products()) { @for(product of this.visibleProducts(); track product.id) {
+    <app-product-card [product]="product"></app-product-card>
+    } } @else {
+    <p>Carregando produtos...</p>
+    }
+  </ul>
+</section>

@@ -1,0 +1,24 @@
+<section>
+  <h1>Carrinho</h1>
+  @if(cartItems().length === 0) {
+  <p>Sem produtos no carrinho!</p>
+  } @else { @for(cartItem of cartItems(); track $index) {
+  <ul>
+    <li>
+      <div>
+        <img [src]="cartItem.image" alt="{{ cartItem.title }}" />
+        <h2>{{ cartItem.title }}</h2>
+        <p>{{ cartItem.price }}</p>
+        <button type="button" (click)="onRemove($index)">Excluir</button>
+      </div>
+    </li>
+  </ul>
+
+  } @if(cartTotalQuantity() > 1) {
+  <h4>{{`Itens (${cartTotalQuantity()})`}}</h4>
+  } @else {
+  <h4>{{`Item (${cartTotalQuantity()})`}}</h4>
+  }
+  <h4>{{`Subtotal ${cartTotalPrice() | currency:'BRL':'symbol':'1.2-2'}`}}</h4>
+  }
+</section>

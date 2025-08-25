@@ -1,0 +1,13 @@
+<li>
+  <div>
+    <a [routerLink]="['products', product.id]">
+      <img [src]="product.image" [alt]="product.title" />
+    </a>
+    <div>
+      <h2>
+        <a>{{ product.title }}</a>
+      </h2>
+      <p>{{ product.price | currency : 'BRL' }}</p>
+    </div>
+  </div>
+</li>
