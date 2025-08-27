@@ -4,7 +4,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { switchMap, map } from 'rxjs';
 
 import { ProductService } from '../../features/products/services/product-service.service';
-import { CartService } from '../../services/cart-service.service';
+import { CartService } from '../../services/cart.service';
 import { Product } from '../../interfaces/products.interface';
 
 @Component({

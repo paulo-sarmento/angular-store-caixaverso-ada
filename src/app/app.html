@@ -2,6 +2,14 @@
   <a routerLink="">Home</a>
   <a routerLink="admin">Admin</a>
   <a routerLink="cart">Carrinho</a>
+  @if(this.auth.isLoggedIn()) {
+  <div>
+    <h6>Bem-vindo, {{ this.auth.userName() }}</h6>
+    <button type="button" (click)="onLogout()">Logout</button>
+  </div>
+  } @else {
+  <a routerLink="login">Login</a>
+  }
 </nav>
 <main>
   <router-outlet />

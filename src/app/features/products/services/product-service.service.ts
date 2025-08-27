@@ -20,4 +20,8 @@ export class ProductService {
   getProductsById(idProduto: string): Observable<Product> {
     return this.httpClient.get<Product>(`${this.apiUrl}/${idProduto}`);
   }
+
+  deleteProduct(id: number): Observable<{}> {
+    return this.httpClient.delete<{}>(`${this.apiUrl}/${id}`);
+  }
 }
