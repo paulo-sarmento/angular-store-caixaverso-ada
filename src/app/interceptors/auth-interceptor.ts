@@ -4,7 +4,7 @@ import { inject } from '@angular/core';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const authContext = inject(Auth);
-  const token = authContext.getToken();
+  const token = authContext.token;
 
   if (token) {
     const clonedReq = req.clone({

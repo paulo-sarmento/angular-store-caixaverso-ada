@@ -12,7 +12,7 @@ export const adminGuard: CanActivateFn = (route, state) => {
   }
 
   if (authContext.isLoggedIn()) {
-    const token = authContext.getToken();
+    const token = authContext.token;
 
     if (token) {
       try {

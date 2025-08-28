@@ -21,9 +21,8 @@ export class LoginComponent {
   onSubmit(form: NgForm) {
     this.auth.login(this.credentials).subscribe({
       next: (res) => {
-        this.auth.saveTokenToLocalStorage(res.token);
+        this.auth.token = res.token;
         this.route.navigate(['/home']);
-        this.auth.isLoggedIn();
 
         form.reset();
       },

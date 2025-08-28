@@ -14,17 +14,21 @@ export class Auth {
   private httpClient = inject(HttpClient);
   private apiUrl = 'https://fakestoreapi.com/auth/login';
 
-  private _token = signal<string | null>(this.getToken());
+  isLoggedIn = signal<boolean>(this.hasToken());
 
-  readonly isLoggedIn = computed(() => !!this._token());
+  userName = computed(() => {
+    const token = this.token;
 
-  readonly userName = computed(() => {
-    const token = this._token();
     if (token) {
-      const decoded = jwtDecode<payload>(token);
-      return decoded.user;
+      try {
+        const decodedToken = jwtDecode<payload>(token);
+        return decodedToken.user;
+      } catch (error) {
+        console.log('erro ao decodificar o token', this.token);
+      }
     }
-    return '';
+
+    return;
   });
 
   login(credentials: { username: string; password: string }): Observable<{ token: string }> {
@@ -33,13 +37,19 @@ export class Auth {
 
   logout() {
     localStorage.removeItem('token');
+    this.isLoggedIn.set(false);
   }
 
-  saveTokenToLocalStorage(token: string) {
+  set token(token: string) {
     localStorage.setItem('token', token);
+    this.isLoggedIn.set(true);
   }
 
-  getToken() {
+  get token(): string | null {
     return localStorage.getItem('token');
+  }
+
+  private hasToken(): boolean {
+    return !!localStorage.getItem('token');
   }
 }
