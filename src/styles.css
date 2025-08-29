@@ -1,4 +1,147 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --cor-primaria: #004c97; /* Azul Caixa */
+  --cor-secundaria: #f39200; /* Laranja Caixa */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  --cor-branco: #ffffff;
+  --cor-preto: #000000;
+  --cor-cinza-claro: #f4f4f4;
+  --cor-cinza: #cccccc;
+  --cor-cinza-escuro: #666666;
+
+  --fonte-base: 'Segoe UI', Arial, sans-serif;
+  --fonte-titulo: 'Segoe UI Semibold', Arial, sans-serif;
+
+  --espaco-xs: 0.25rem; /* 4px */
+  --espaco-sm: 0.5rem; /* 8px */
+  --espaco-md: 1rem; /* 16px */
+  --espaco-lg: 2rem; /* 32px */
+  --espaco-xl: 4rem; /* 64px */
+
+  --borda-radius: 0.5rem; /* 8px */
+  --borda-radius-lg: 1rem; /* 16px */
+
+  --sombra-base: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+  --break-xs: 480px;
+  --break-sm: 768px;
+  --break-md: 1024px;
+  --break-lg: 1280px;
+  --break-xl: 1536px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--fonte-base);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+  text-rendering: optimizeSpeed;
+  width: 90%;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+button {
+  font-family: var(--fonte-base);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--borda-radius);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: var(--fs-md);
+}
+
+button.primary {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+
+button.primary:hover {
+  background: #003a73;
+}
+
+button.primary:active {
+  background: #002a52;
+}
+
+button.secondary {
+  background: var(--cor-secundaria);
+  color: var(--cor-branco);
+}
+
+button.secondary:hover {
+  background: #d67c00;
+}
+
+button.secondary:active {
+  background: #b56600;
+}
+
+button.ghost {
+  background: transparent;
+  border: 2px solid var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+
+button.ghost:hover {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-size: clamp(0.75rem, 5vw, 1.5rem);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

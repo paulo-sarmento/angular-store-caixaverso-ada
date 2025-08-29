@@ -5,7 +5,7 @@
   @if(this.auth.isLoggedIn()) {
   <div>
     <h6>Bem-vindo, {{ this.auth.userName() }}</h6>
-    <button type="button" (click)="onLogout()">Logout</button>
+    <button type="button" class="btn-logout ghost" (click)="onLogout()">Logout</button>
   </div>
   } @else {
   <a routerLink="login">Login</a>

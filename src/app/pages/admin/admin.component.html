@@ -1,20 +1,22 @@
-<table>
-  <thead>
-    <tr>
-      <th>Produto</th>
-      <th>Preço</th>
-      <th>Deletar</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (product of products(); track product.id) {
-    <tr>
-      <td>{{ product.title }}</td>
-      <td>{{ product.price | currency : 'BRL' }}</td>
-      <td>
-        <button type="button" (click)="onDelete(product.id)">Deletar</button>
-      </td>
-    </tr>
-    }
-  </tbody>
-</table>
+<div class="products-table-container">
+  <table class="products-table">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Preço</th>
+        <th>Deletar</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of products(); track product.id) {
+      <tr>
+        <td>{{ product.title }}</td>
+        <td>{{ product.price | currency : 'BRL' }}</td>
+        <td>
+          <button class="secondary" type="button" (click)="onDelete(product.id)">Deletar</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

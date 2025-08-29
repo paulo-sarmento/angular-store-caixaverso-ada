@@ -1,6 +1,6 @@
-<div>
+<div class="wrapper">
   @for (category of categories(); track $index) {
-  <button type="button" (click)="onSelectCategory(category)">
+  <button type="button" class="" (click)="onSelectCategory(category)">
     <span>{{ category }}</span>
   </button>
   }

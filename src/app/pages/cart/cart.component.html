@@ -1,15 +1,19 @@
 <section>
-  <h1>Carrinho</h1>
+  <h1 class="title">Carrinho</h1>
   @if(cartItems().length === 0) {
   <p>Sem produtos no carrinho!</p>
   } @else { @for(cartItem of cartItems(); track $index) {
   <ul>
     <li>
-      <div>
-        <img [src]="cartItem.image" alt="{{ cartItem.title }}" />
-        <h2>{{ cartItem.title }}</h2>
-        <p>{{ cartItem.price }}</p>
-        <button type="button" (click)="onRemove($index)">Excluir</button>
+      <div class="cart-item">
+        <div class="img-container">
+          <img [src]="cartItem.image" alt="{{ cartItem.title }}" />
+        </div>
+        <div class="cart-content">
+          <h2 class="title">{{ cartItem.title }}</h2>
+          <p class="price">{{ cartItem.price | currency : 'BRL' : 'symbol' : '1.2-2' }}</p>
+        </div>
+        <button class="secondary" type="button" (click)="onRemove($index)">Excluir</button>
       </div>
     </li>
   </ul>

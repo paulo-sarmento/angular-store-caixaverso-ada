@@ -1,13 +1,15 @@
 <li>
-  <div>
-    <a [routerLink]="['products', product.id]">
-      <img [src]="product.image" [alt]="product.title" />
-    </a>
-    <div>
+  <div class="card">
+    <div class="img-container">
+      <a [routerLink]="['products', product.id]">
+        <img [src]="product.image" [alt]="product.title" class="card-img" />
+      </a>
+    </div>
+    <div class="card-description">
       <h2>
-        <a>{{ product.title }}</a>
+        <a class="title">{{ product.title }}</a>
       </h2>
-      <p>{{ product.price | currency : 'BRL' }}</p>
+      <p class="price">{{ product.price | currency : 'BRL' }}</p>
     </div>
   </div>
 </li>

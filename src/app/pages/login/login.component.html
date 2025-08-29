@@ -1,9 +1,16 @@
+<h1>Login</h1>
 <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-  <input type="text" [(ngModel)]="credentials.username" name="username" />
-  <input type="password" [(ngModel)]="credentials.password" name="password" />
-  <button type="submit">Login</button>
+  <input
+    type="text"
+    [(ngModel)]="credentials.username"
+    name="username"
+    placeholder="Nome de usuário"
+  />
+  <input type="password" [(ngModel)]="credentials.password" name="password" placeholder="Senha" />
+  <button type="submit" class="primary">Login</button>
 </form>
-<div>
-  <p>usuário administrador: johnd</p>
-  <p>senha usuario administrador: m38rmF$</p>
+
+<div class="info">
+  <p>administrador - johnd</p>
+  <p>Senha - m38rmF$</p>
 </div>
